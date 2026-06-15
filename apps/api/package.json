@@ -1,0 +1,29 @@
+{
+    "name": "@app/api",
+    "version": "1.0.50",
+    "scripts": {
+        "dev": "bun run --watch ./src/index.ts",
+        "build": "bun run ./build.ts",
+        "build:types": "tsc -p tsconfig.build.json",
+        "clean": "rm -rf dist",
+        "typecheck": "tsc --noEmit",
+        "check": "biome check .",
+        "check:fix": "biome check --write ."
+    },
+    "dependencies": {
+        "elysia": "^1.4.28",
+        "@repo/env": "workspace:"
+    },
+    "devDependencies": {
+        "@types/bun": "catalog:"
+    },
+    "module": "src/index.js",
+    "engines": {
+        "bun": ">=1.2.0"
+    },
+    "author": {
+        "email": "ShahTheShah@ya.ru",
+        "name": "@naylour",
+        "url": "https://github.com/naylour"
+    }
+}
