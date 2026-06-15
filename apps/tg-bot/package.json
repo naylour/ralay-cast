@@ -1,0 +1,33 @@
+{
+    "name": "@app/tg-bot",
+    "module": "./src/index.ts",
+    "type": "module",
+    "private": true,
+    "engines": {
+        "bun": ">=1.2.0"
+    },
+    "author": {
+        "email": "ShahTheShah@ya.ru",
+        "name": "@naylour",
+        "url": "https://github.com/naylour"
+    },
+    "scripts": {
+        "dev": "bun run ./src/index.ts",
+        "build": "bun run ./build.ts",
+        "build:types": "tsc -p tsconfig.build.json",
+        "clean": "rm -rf dist",
+        "typecheck": "tsc --noEmit",
+        "check": "biome check .",
+        "check:fix": "biome check --write ."
+    },
+    "devDependencies": {
+        "@types/bun": "catalog:"
+    },
+    "peerDependencies": {
+        "typescript": "catalog:"
+    },
+    "dependencies": {
+        "grammy": "^1.44.0",
+        "@repo/env": "workspace:"
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "name": "@repo/env",
+    "module": "lib/index.ts",
+    "type": "module",
+    "devDependencies": {
+        "@types/bun": "catalog:"
+    },
+    "peerDependencies": {
+        "typescript": "catalog:"
+    },
+    "dependencies": {
+        "valibot": "catalog:"
+    },
+    "exports": {
+        ".": "./lib/index.ts"
+    }
+}
