@@ -3,9 +3,54 @@
     "type": "module",
     "private": true,
     "devDependencies": {
-        "@types/bun": "latest"
+        "@types/bun": "^1.3.14"
     },
     "peerDependencies": {
-        "typescript": "^5"
+        "typescript": "^6.0.3"
+    },
+    "workspaces": {
+        "packages": [
+            "apps/client",
+            "apps/tg-bot",
+            "infra/env"
+        ],
+        "catalog": {
+            "@types/bun": "^1.3.14",
+            "typescript": "^6.0.3",
+            "valibot": "^1.4.1"
+        },
+        "catalogs": {}
+    },
+    "repository": {
+        "url": "git+https://github.com/naylour/ralay-cast",
+        "directory": ".",
+        "type": "git"
+    },
+    "author": {
+        "email": "ShahTheShah@ya.ru",
+        "name": "@naylour",
+        "url": "https://github.com/naylour"
+    },
+    "homepage": "https://github.com/naylour/ralay-cast/blob/main/README.EN.md",
+    "description": "Personal multi-channel publishing service. Write once, broadcast everywhere — Telegram channels, groups, and beyond",
+    "keywords": [
+        "telegram",
+        "telegram-bot",
+        "publishing",
+        "broadcast",
+        "multi-channel",
+        "content-management",
+        "self-hosted",
+        "sveltekit",
+        "elysia",
+        "bun",
+        "prisma",
+        "bot-api",
+        "markdownv2",
+        "inline-keyboard",
+        "scheduler"
+    ],
+    "dependencies": {
+        "valibot": "^1.4.1"
     }
 }

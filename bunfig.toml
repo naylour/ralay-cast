@@ -1,0 +1,14 @@
+[run]
+shell = "bun"
+bun = true
+
+
+[install]
+linker = "isolated"
+
+# [test]
+# root = ["tests", "src"]
+# preload = ["./tests/setup.ts"]
+# coverage = true
+# coverageSkipTestFiles = true
+# coverageReporter = ["text", "lcov"]
