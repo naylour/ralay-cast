@@ -1,0 +1,47 @@
+amends "package://github.com/jdx/hk/releases/download/v1.46.0/hk@1.46.0#/Config.pkl"
+import "package://github.com/jdx/hk/releases/download/v1.46.0/hk@1.46.0#/Builtins.pkl"
+
+local webLinters = new Mapping<String, Step> {
+    ["biome"] {
+        glob = List("**/*.ts", "**/*.js", "**/*.svelte", "**/*.css", "**/*.json")
+        exclude = List("**/node_modules/**", "**/dist/**", "**/build/**", "**/.svelte-kit/**", "**/generated/**")
+        check = "biome check {{files}}"
+        fix   = "biome check --write {{files}}"
+    }
+}
+
+
+hooks {
+    ["pre-commit"] {
+        fix   = true
+        stash = "git"
+        steps = new Mapping {
+            ...webLinters
+        }
+    }
+
+    ["commit-msg"] {
+        steps {
+            ["check-conventional-commit"] = Builtins.check_conventional_commit
+        }
+    }
+
+    ["pre-push"] {
+        steps = new Mapping {
+            ...webLinters
+        }
+    }
+
+    ["fix"] {
+        fix   = true
+        steps = new Mapping {
+            ...webLinters
+        }
+    }
+
+    ["check"] {
+        steps = new Mapping {
+            ...webLinters
+        }
+    }
+}
